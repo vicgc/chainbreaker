@@ -1,8 +1,6 @@
 chainbreaker
 ============
 
-This tool is developed for forensic examiner
-
 Chain Breaker is able to extract user credential in a Keychain file with Master Key or user password in forensically sound manner.
 
 Master Key candidates can be extracted from volafox keychaindump module.
