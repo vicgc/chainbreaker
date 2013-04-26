@@ -28,14 +28,14 @@ The volafox, memory forensic toolit for Mac OS X has been written in Python as a
 
 ### command
 
-    # python volafox.py -i [memory image] -o keychaindump
+    $ python volafox.py -i [memory image] -o keychaindump
     ....
     ....
-    # python chainbreaker.py -i [keychain file] -k [master key]
+    $ python chainbreaker.py -i [keychain file] -k [master key]
 
 
 ## Example
-    n0fate@n0fate-ui-MacBook-Pro: ~/volafox$ python vol.py -i ~/Desktop/show/macosxml.mem -o keychaindump
+    $ python vol.py -i ~/Desktop/show/macosxml.mem -o keychaindump
     
     [+] Virtual Memory Map Information
      [-] Virtual Address Start Point: 0x108240000
@@ -94,7 +94,7 @@ The volafox, memory forensic toolit for Mac OS X has been written in Python as a
     [*] master key candidate: 05556393141766259F62053793F62098D21176BAAA540927
     [*] master key candidate: 903C49F0FE0700C0133749F0FE0700404158544D00000000
 
-    n0fate@n0fate-ui-MacBook-Pro: ~/chainbreaker$ python chainbreaker.py -i ~/Desktop/show/login.keychain -k 26C80BE3346E720DAA10620F2C9C8AD726CFCE2B818942F9
+    $ python chainbreaker.py -i ~/Desktop/show/login.keychain -k 26C80BE3346E720DAA10620F2C9C8AD726CFCE2B818942F9
      [-] DB Key
     00000000:  05 55 63 93 14 17 66 25  9F 62 05 37 93 F6 20 98  .Uc...f%.b.7.. .
     00000010:  D2 11 76 BA AA 54 09 27                                                   ..v..T.'
