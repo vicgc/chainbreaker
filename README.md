@@ -12,9 +12,12 @@ Master Key candidates can be extracted from volafox keychaindump module.
 
 ### requirement : keychain file and user password
 
-If you have only keychain file as following
+If you have only keychain file, command as follow:
+
+### command
 
     # python chainbreaker.py -i [keychain file] -p [user password]
+
 
 
 ### requirement : keychain file and memory image
@@ -24,6 +27,8 @@ If you have memory image, you can extract master key candidates using volafox pr
 The volafox, memory forensic toolit for Mac OS X has been written in Python as a cross platform open source project.
 
 [volafox project - google code](http://code.google.com/volafox/)
+
+### command
 
     # python volafox.py -i [memory image] -o keychaindump
     ....
@@ -145,7 +150,7 @@ The volafox, memory forensic toolit for Mac OS X has been written in Python as a
 
 chainbreaker was written by [n0fate](http://twitter.com/n0fate)
 
-email : n0fate@n0fate.com
+email address can be found from source code.
 
 ## License
 [GNU GPL v2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
