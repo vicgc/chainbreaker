@@ -24,7 +24,7 @@ If you have memory image, you can extract master key candidates using volafox pr
 
 The volafox, memory forensic toolit for Mac OS X has been written in Python as a cross platform open source project.
 
-[volafox project - google code](http://code.google.com/volafox/)
+[volafox project - google code](http://code.google.com/p/volafox/)
 
 ### command
 
