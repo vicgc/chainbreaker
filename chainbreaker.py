@@ -363,7 +363,11 @@ class KeyChain():
         
         
         for record_count in range(0, table_meta[2]):
-            record_list.append(struct.unpack('>I', fbuf[RECORD_OFFSET_BASE+(ATOM_SIZE*record_count):RECORD_OFFSET_BASE+(ATOM_SIZE*record_count)+ATOM_SIZE])[0])
+            record_offset = struct.unpack('>I', fbuf[RECORD_OFFSET_BASE+(ATOM_SIZE*record_count):RECORD_OFFSET_BASE+(ATOM_SIZE*record_count)+ATOM_SIZE])[0]
+            if len(record_list) >= 1:
+                if record_list[len(record_list)-1] >= record_offset:
+                    continue
+            record_list.append(record_offset)
             #print ' [-] Record Offset: 0x%.8x'%record_list[record_count]
         
         return table_meta, record_list
@@ -393,15 +397,15 @@ class KeyChain():
     
     def get_keyblob_record(self, fbuf, base_addr, offset):
         record_meta = []
-        record = []
+        #record = []
         
         BASE_ADDR = APPL_DB_HEADER_SIZE + base_addr + offset
         
         record_meta = struct.unpack(KEY_BLOB_RECORD_HEADER, fbuf[BASE_ADDR:BASE_ADDR+0x84])
         
         # sorting record data
-        for record_element in record_meta:
-            record.append(record_element)
+        #for record_element in record_meta:
+        #    record.append(record_element)
         
          # record_meta[0] => record size
         record_buf = fbuf[BASE_ADDR+0x84:BASE_ADDR+record_meta[0]] # password data area
