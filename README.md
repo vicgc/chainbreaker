@@ -5,7 +5,7 @@ Chain Breaker is able to extract user credential in a Keychain file with Master 
 
 Master Key candidates can be extracted from volafox keychaindump module.
 
-##Support OS
+##Supported OS
 
 Snow Leopard, Lion, Mountain Lion, Mavericks
 
