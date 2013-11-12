@@ -351,22 +351,22 @@ class KeyChain():
         
         RECORD_OFFSET_BASE = BASE_ADDR+16+12
         
-        #print '[+] Table'
-        #print ' [-] Size : 0x%.8x'%table_meta[0]
-        #print ' [-] ID : 0x%.8x'%table_meta[1]
-        #print ' [-] Records Count : 0x%.8x'%table_meta[2]
-        #print ' [-] Records : 0x%.8x'%table_meta[3]
-        #print ' [-] Indexes Offset : 0x%.8x'%table_meta[3]
-        #print ' [-] FreeListHead : 0x%.8x'%table_meta[4]
-        #print ' [-] RecordNumbers Count : 0x%.8x'%table_meta[5]
-        #print ' [-] RecordNumbers : 0x%.8x'%table_meta[6]
+        # print '[+] Table'
+        # print ' [-] Size : 0x%.8x'%table_meta[0]
+        # print ' [-] ID : 0x%.8x'%table_meta[1]
+        # print ' [-] Records Count : 0x%.8x'%table_meta[2]
+        # print ' [-] Records : 0x%.8x'%table_meta[3]
+        # print ' [-] Indexes Offset : 0x%.8x'%table_meta[3]
+        # print ' [-] FreeListHead : 0x%.8x'%table_meta[4]
+        # print ' [-] RecordNumbers Count : 0x%.8x'%table_meta[5]
+        # print ' [-] RecordNumbers : 0x%.8x'%table_meta[6]
         
         
         for record_count in range(0, table_meta[2]):
             record_offset = struct.unpack('>I', fbuf[RECORD_OFFSET_BASE+(ATOM_SIZE*record_count):RECORD_OFFSET_BASE+(ATOM_SIZE*record_count)+ATOM_SIZE])[0]
-            if len(record_list) >= 1:
-                if record_list[len(record_list)-1] >= record_offset:
-                    continue
+            # if len(record_list) >= 1:
+            #     if record_list[len(record_list)-1] >= record_offset:
+            #         continue
             record_list.append(record_offset)
             #print ' [-] Record Offset: 0x%.8x'%record_list[record_count]
         
@@ -1446,7 +1446,7 @@ def main():
 
     
     ## GET DBBlob Record List
-    print '[+] Generic Password: 0x%.8x'%(APPL_DB_HEADER_SIZE+table_list[genericpw_offset])
+    #print '[+] Generic Password: 0x%.8x'%(APPL_DB_HEADER_SIZE+table_list[genericpw_offset])
     table_meta, genericpw_list = keychain.get_table(fbuf, table_list[genericpw_offset])
     
     ## GET DBBlob Record
@@ -1480,7 +1480,7 @@ def main():
         print ''
 
 
-    print '[+] Internet: 0x%.8x'%(APPL_DB_HEADER_SIZE+table_list[internet_offset])
+    #print '[+] Internet: 0x%.8x'%(APPL_DB_HEADER_SIZE+table_list[internet_offset])
     table_meta, internetpw_list = keychain.get_table(fbuf, table_list[internet_offset])
     
 
@@ -1520,7 +1520,7 @@ def main():
         hexdump(passwd)
         print ''
 
-    print '[+] AppleShare Table: 0x%.8x'%(APPL_DB_HEADER_SIZE+table_list[appleshare_offset])
+    #print '[+] AppleShare Table: 0x%.8x'%(APPL_DB_HEADER_SIZE+table_list[appleshare_offset])
     table_meta, applesharepw_list = keychain.get_table(fbuf, table_list[appleshare_offset])
     
 
